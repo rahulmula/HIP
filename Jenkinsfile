@@ -18,7 +18,7 @@ node ('rocm_sshaik1') {
                cd ${WORKSPACE}
                mkdir build
                cd build
-               cmake -DCMAKE_INSTALL_PREFIX=$PWD/ .
+               cmake -DCMAKE_INSTALL_PREFIX=$PWD/ ..
                make -j16
                make install
                """
