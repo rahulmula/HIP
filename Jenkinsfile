@@ -13,16 +13,16 @@ node ('rocm_sshaik1') {
 
 
     stage('Build') {
-
-    	        sh 'cd ${WORKSPACE}'
-                sh 'mkdir build'
-                sh 'cd build'
-                sh 'cmake .'
-                //sh 'cmake -DCMAKE_INSTALL_PREFIX=$PWD/ .'
-                sh 'make -j16'
-                sh 'make install'
-
-                }
+      
+               sh  """#!/usr/bin/env bash
+               cd ${WORKSPACE}
+               mkdir build
+               cd build
+               cmake -DCMAKE_INSTALL_PREFIX=$PWD/ .
+               make -j16
+               make install
+               """
+    }
 
 
         
